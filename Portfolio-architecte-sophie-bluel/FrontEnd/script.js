@@ -8,6 +8,7 @@ async function callApi(){
     const project = json[i];
     const gallery = document.querySelector(".gallery");
     const projectElement =document.createElement("figure");
+    projectElement.id = "card-"+json[i].id;
     projectElement.dataset.name = json[i].category.name;
     projectElement.className = "card"
     const imageElement = document.createElement("img");
@@ -20,8 +21,7 @@ async function callApi(){
     projectElement.appendChild(titleElement);
     console.log(project)
     console.log(projectElement.id)
-    }
-    
+    }  
    }; 
   callApi()
 
