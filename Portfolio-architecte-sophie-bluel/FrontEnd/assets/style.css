@@ -210,6 +210,8 @@ button{
 		align-items: center;
 		gap: 10px;
 		font-size: 16px;
+		margin-top: 20px;
+		margin-left: 30px;
 }
 
 .filtre{
