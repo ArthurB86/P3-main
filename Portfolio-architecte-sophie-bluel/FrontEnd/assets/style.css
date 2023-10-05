@@ -29,6 +29,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+a{
+	color: black;
+	text-decoration: none;
+}
+a:visited{
+	color: black;
+}
 body {
 	line-height: 1;
 }
@@ -203,17 +210,19 @@ button{
 		gap: 10px;
 		font-size: 16px;
 }
-button:hover{
-	background-color: rgba(29, 97, 84, 1);
-	color: white;
-}
+
 .filtre{
 	height: 37px;
 	width:585px ;
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
-	margin: 50px 250px 50px;
+	margin: auto;
+	padding-bottom: 50px;
+}
+.filtre button:hover{
+	color: white;
+	background-color: #1D6154;
 }
 
 figure.hide{
@@ -229,7 +238,9 @@ a{
 }
 #loginmessage{
 	color: red;
-	
+	display: flex;
+	justify-content: center;
+	padding: 10px;
 }
 
 .blackBarre{
@@ -303,7 +314,6 @@ footer{
 
   .modal-wrapper{
 	width: 600px;
-	height: 711px;
 	max-width: calc(100vw -20px);
 	max-height: calc(100vh -20px);
 	padding: 20px;
@@ -311,7 +321,8 @@ footer{
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	gap: 30px;
+	border-radius: 10px;
+	position: relative;
   }
 
 .modal img{
@@ -332,60 +343,69 @@ footer{
 	color: white;
 	background-color: #1D6154;
 	width: 50%;
+	margin: 30px;
 }
 .supprimer{
 	color: red;
+	padding-bottom: 30px;
 }
 .titreModal{
 	font-size: 26px;
+	padding:30px;
 }
 article img{
 	display: block;
 }
 
-.modals{
-	position: relative;
-	padding-top: 50px;
-}
 .js-modal-close {
-	position: absolute; top:10px; right: 10px;
+	position: absolute; top:10px; right:10px;
 	border: none;
 	color: black;
-	pointer-events: none;
 	font-size: 20px;
 }
+
 .js-modal-back{
-	position: absolute; top:10px; left: 10px;
+	position: absolute; top: 10px; left: 10px;
 	border: none;
 	color: black;
-	pointer-events: none;
 	font-size: 20px;
+	display: none;
 }
+
 hr{
 	width: 420px;
+	margin-top: 30px;
 }
 
 .addPhoto{
 	display: flex;
 }
+.addPhotos{
+	display: flex;
+}
 .modal1{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content:space-around;
 	align-items: center;
-	gap: 50px;
+	padding-top: 20px;
+	width: 100%;
+	height: 100%;
 }
 
 .modal2{
 	display: none;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
+	padding-top: 20px;
 }
+
 .titreModalPhoto{
 	font-size: 26px;
+	padding: 20px;
 }
 .divIcon{
 	background-color:
@@ -396,6 +416,8 @@ hr{
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .divIcon p{
 	font-size: 12px;
@@ -406,34 +428,31 @@ hr{
 	rgba(203, 214, 220, 1);
 	color:rgba(48, 102, 133, 1) ;
 	border: none;
-	width: 50%;
+	width: 40%;
 	padding: 15px;
 	border-radius: 60px; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	font-size: 16px;
 	
 }
 .inputform{
 	display: none;
+
 }
 .divIcon .fa-regular{
 	font-size: 70px;
 	color:rgba(203, 214, 220, 1) ;
 	background-color:rgba(232, 241, 246, 1) ;
+	margin-top: 10px;
+}
+.label{
+	padding-bottom: 10px;
+	padding-top: 30px;
+}
+.category{
+	padding-bottom: 10px;
 	margin-top: 30px;
-}
-.formModal{
-	width: 100%;
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
-}
 
+}
 .labelModal{
 	width: 70%;
 	height: 50px;
@@ -514,6 +533,26 @@ height: 30px;
 	width: 40%;
 }
 
-#imageSelected{
+.imgCharged{
 	width: 100%;
+	height: 100%;
+	background-color: rgba(232, 241, 246, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+.error{
+	display: none;
+	color: red;
+}
+.popup {
+	display: none;
+	position: absolute;
+	top: 50%;
+	background-color: rgba(255, 254, 248, 1) ;
+	border: 1px solid #ccc;
+	padding: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	
+  }
+
