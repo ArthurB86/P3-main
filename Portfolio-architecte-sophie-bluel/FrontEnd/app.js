@@ -170,7 +170,9 @@ valide.addEventListener("click", (e) => {
 //fonction qui deverouille le bouton valider du formulaire
 function validationButton (){
     const error =document.querySelector(".error")
+    const validButton = document.getElementById("valid");
     if(uploadImg.files.length > 0 && title.value!== "" && choseCat.value !=="") {
+        validButton.disabled = false;
         valid.classList.add("true")
         error.style.display="none"
         console.log(uploadImg)
@@ -178,6 +180,7 @@ function validationButton (){
         console.log(choseCat)
         console.log(valid)
     }else{
+        validButton.disabled = true;
         valid.classList.remove("true")
         error.style.display ="flex"
 }
@@ -185,6 +188,9 @@ function validationButton (){
 uploadImg.addEventListener("input", validationButton);
 title.addEventListener("input", validationButton);
 choseCat.addEventListener("input", validationButton);
+const validerButton = document.getElementById("valider");
+validerButton.disabled = true;
+
 validationButton()
 
 // fonction pour afficher l'image a ajouter au projet
@@ -193,11 +199,18 @@ const inputFile = document.getElementById('uploadImg')
 inputFile.addEventListener('change', previewFile); 
    function previewFile(){ 
     const image = this.files[0]
+    if (image) {
+        const maxSize= 4 * 1024 * 1024; // 4 Mo
+        if (image.size > maxSize) {
+            alert('L\'image est trop volumineuse. Veuillez sélectionner une image de moins de 4 Mo.');
+            this.value = ''; // Effacer le champ d'entrée de fichier
+        } else {
     console.log(image);
     const reader = new FileReader();
     reader.readAsDataURL(image);
     reader.addEventListener('load', (event) => displayImage(event));
-}
+}}
+   };
 
 //fonction qui cache la div de chargement de la photo et affiche la photo que l'on souhaite charger
 function displayImage(event) {

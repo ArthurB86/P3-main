@@ -111,13 +111,13 @@ function isconnected () {
     }
 
 
-    function logout () {
-        if (sessionStorage.token !== null && sessionStorage.token !== undefined){
+function logout () {
+    if (sessionStorage.token !== null && sessionStorage.token !== undefined){
             const logout= document.querySelector(".logout");
             const login= document.querySelector(".login");
             logout.style.display = "flex";
             login.style.display ="none";
-        } 
+    } 
     }
     logout()
 
